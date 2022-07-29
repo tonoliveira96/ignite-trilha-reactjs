@@ -1,15 +1,18 @@
-import { useState } from 'react'
-
+import { useState } from 'react';
+import { Header } from './components/Header/Header';
 
 import './global.css';
 
 function App() {
-
   return (
-    <div className="App">
-     Hello World
-    </div>
-  )
+    <>
+      <Header />
+      <div className="App">
+        Hello World
+      </div>
+    </>
+
+  );
 }
 
-export default App
+export default App;
