@@ -1,0 +1,13 @@
+button {
+  padding: 16px;
+  gap: 8px;
+
+  width: 90px;
+  height: 52px;
+
+  /* Blue Dark */
+
+  background: var(--blue-dark);
+  border-radius: 8px;
+  color: var(--gray-100)
+}
