@@ -1,10 +1,7 @@
 import { Trash } from "phosphor-react"
+import { TaskProps } from '../../App';
 import style from './TaskComponent.module.css';
 
-interface TaskProps {
-  completed: boolean;
-  description: string;
-}
 
 export function TaskComponent({description, completed}: TaskProps){
   return(

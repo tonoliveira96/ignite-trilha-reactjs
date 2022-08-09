@@ -1,11 +1,16 @@
-import { Plus } from 'phosphor-react';
+import { PlusCircle } from 'phosphor-react';
+import { ButtonHTMLAttributes } from 'react';
 import style from './ButtonAdd.module.css';
 
-export function ButtonAdd(){
+interface ButtonsAddProps {
+  onClick: ()=> void;
+}
+
+export function ButtonAdd({ onClick, ...rest}: ButtonsAddProps) {
   return (
-    <button className={style.addBtn}>
+    <button className={ style.addBtn } onClick={onClick} {...rest}>
       Criar
-      <Plus size={16}/>
+      <PlusCircle size={ 20 } />
     </button>
-  )
+  );
 }

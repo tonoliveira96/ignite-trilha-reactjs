@@ -1,5 +1,6 @@
 .addBtn {
   display: flex;
+  align-items: center;
   padding: 16px;
   height: 54px;
 

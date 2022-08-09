@@ -26,7 +26,7 @@
 .containerComponent span {
   color: var(--gray-100);
   font-size: 0.875rem;
-
+  width: 100%;
 }
 
 .containerComponent .completed {
