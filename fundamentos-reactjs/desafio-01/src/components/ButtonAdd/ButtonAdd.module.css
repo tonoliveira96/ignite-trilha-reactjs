@@ -1,13 +1,23 @@
-button {
+.addBtn {
+  display: flex;
   padding: 16px;
-  gap: 8px;
-
-  width: 90px;
-  height: 52px;
+  height: 54px;
 
   /* Blue Dark */
-
   background: var(--blue-dark);
   border-radius: 8px;
-  color: var(--gray-100)
+  color: var(--gray-100);
+  font-weight: bold;
+  font-size: 0.875rem;
+
+  transition: background-color 0.3s;
+}
+
+.addBtn:hover {
+  background: var(--blue);
+}
+
+.addBtn svg {
+  color: var(--gray-100);
+  margin-left: 6px;
 }

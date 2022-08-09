@@ -3,17 +3,20 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  position: relative;
+  padding: 64px 24px;
 
 }
 
-.container {
+.containerInput {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
   gap: 8px;
-
   position: absolute;
+  top: calc(0px - 1.5rem);
+
   width: 100%;
   max-width: 736px;
   height: 54px;
@@ -25,9 +28,8 @@
   align-items: flex-start;
   max-width: 736px;
   padding: 0px;
-  gap: 24px;
 
-  width: 736px;
+  width: 100%;
 }
 
 .taskHeader {
@@ -36,7 +38,6 @@
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  margin-top: 290px;
 }
 
 header .created {
@@ -84,4 +85,10 @@ header span {
   background: var(--gray-400);
   border-radius: 10px;
   color: var(--gray-100);
+}
+
+.tasksContainer {
+  width: 100%;
+  border-top: 1px solid var(--gray-400);
+  padding-top: 24px;
 }
