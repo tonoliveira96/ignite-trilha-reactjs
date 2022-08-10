@@ -1,10 +1,9 @@
 
 import React from 'react';
-import { TaskProps } from '../../App';
 import style from "./Input.module.css";
 
 interface InputTodoProps {
-  setTask: React.Dispatch<React.SetStateAction<TaskProps>>;
+  setTask: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export function InputTodo({ setTask }: InputTodoProps) {
@@ -13,7 +12,8 @@ export function InputTodo({ setTask }: InputTodoProps) {
       type="text"
       placeholder='Adicione uma nova tarefa'
       className={ style.inputTask }
-      onChange={ (e) => setTask({ completed: false, description: e.target.value }) }
+      onChange={ (e) => setTask(e.target.value) }
+
     />
   );
 }
