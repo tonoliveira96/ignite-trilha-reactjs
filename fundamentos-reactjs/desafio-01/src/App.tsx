@@ -37,6 +37,19 @@ function App() {
     localStorage.setItem("@viteTodoList", JSON.stringify(newTaskList));
   }
 
+  function completeTask(id: string) {
+    const newTaskList = tasksList.map(item => {
+      if (item.id === id) {
+        item.completed = !item.completed;
+        return item;
+      }
+
+      return item;
+    });
+    setTasksList(newTaskList);
+    localStorage.setItem("@viteTodoList", JSON.stringify(newTaskList));
+  }
+
   useEffect(() => {
     const localTask = localStorage.getItem("@viteTodoList");
 
@@ -73,6 +86,7 @@ function App() {
                 completed={ data.completed }
                 description={ data.description }
                 deleteTask={ deleteTask }
+                completeTask={ completeTask }
               />
             )) }
 
