@@ -1,5 +1,4 @@
-# Ignite ReactJS 2022
-## Desafio-01 - Vite TodoList
+# Desafio-01 - Vite TodoList
 
 Criação de uma aplicação de lista de tarefas usando React iniciando projeto com Vite
 
