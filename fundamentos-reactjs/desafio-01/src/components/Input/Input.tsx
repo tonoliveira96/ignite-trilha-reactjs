@@ -13,7 +13,7 @@ export function InputTodo({ setTask }: InputTodoProps) {
       placeholder='Adicione uma nova tarefa'
       className={ style.inputTask }
       onChange={ (e) => setTask(e.target.value) }
-
+      
     />
   );
 }

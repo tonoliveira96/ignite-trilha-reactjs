@@ -10,8 +10,6 @@ interface TaskComponents extends TaskProps {
 
 export function TaskComponent({ id, description, completed, deleteTask, completeTask }: TaskComponents) {
 
-  const [completedTask, setCompletedTask] = useState(false);
-
   function handleDelete() {
     deleteTask(id);
   }

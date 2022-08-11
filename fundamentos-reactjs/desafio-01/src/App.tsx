@@ -7,6 +7,7 @@ import './global.css';
 import style from './App.module.css';
 import { ButtonAdd } from './components/ButtonAdd/ButtonAdd';
 import { TaskComponent } from './components/TaskComponent/TaskComponent';
+import { NoTaskComponent } from './components/NoTaskComponent/NoTaskComponent';
 
 export interface TaskProps {
   id: string;
@@ -19,6 +20,7 @@ function App() {
   const [tasksList, setTasksList] = useState<TaskProps[]>([]);
 
   const [task, setTask] = useState('');
+  const [taskCount, setTaskCount] = useState(0);
 
   function handleCreate() {
     const newTask = {
@@ -31,7 +33,6 @@ function App() {
   }
 
   function deleteTask(id: string) {
-    console.log(id);
     const newTaskList = tasksList.filter(item => item.id !== id);
     setTasksList(newTaskList);
     localStorage.setItem("@viteTodoList", JSON.stringify(newTaskList));
@@ -43,7 +44,6 @@ function App() {
         item.completed = !item.completed;
         return item;
       }
-
       return item;
     });
     setTasksList(newTaskList);
@@ -57,6 +57,22 @@ function App() {
       setTasksList(JSON.parse(localTask));
     }
   }, []);
+
+  useEffect(() => {
+    let amount = tasksList.filter(item => item.completed === true);
+    setTaskCount(amount.length);
+  }, [tasksList]);
+
+  const taskComponent = tasksList.length > 0 ? tasksList.map((data) => (
+    <TaskComponent
+      key={ data.id }
+      id={ data.id }
+      completed={ data.completed }
+      description={ data.description }
+      deleteTask={ deleteTask }
+      completeTask={ completeTask }
+    />
+  )) : (<NoTaskComponent/>)
 
   return (
     <>
@@ -75,20 +91,11 @@ function App() {
             </div>
             <div className={ style.done }>
               Concluídas
-              <span>0</span>
+              <span>{ `${taskCount} de ${tasksList.length}` }</span>
             </div>
           </header>
           <div className={ style.tasksContainer }>
-            { tasksList.map((data) => (
-              <TaskComponent
-                key={ data.id }
-                id={ data.id }
-                completed={ data.completed }
-                description={ data.description }
-                deleteTask={ deleteTask }
-                completeTask={ completeTask }
-              />
-            )) }
+            { taskComponent }
 
           </div>
         </div>
