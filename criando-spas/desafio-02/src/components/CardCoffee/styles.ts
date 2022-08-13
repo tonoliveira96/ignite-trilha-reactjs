@@ -2,19 +2,22 @@ import styled from 'styled-components';
 
 export const CoffeeCardContainer = styled.div`
   display: flex;
+  position: relative;
   max-width: 256px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.card};
   border-radius: 6px 36px;
-  padding: 0 2rem 2rem 2rem;
-  gap: 1.2rem;
+  padding: 1.25rem;
+  padding-top: 8rem;
+  gap: 1rem;
 
   img {
+    position: absolute;
     width: 120px;
     height: 120px;
-    margin-top: calc(0px - 1.5rem);
+    top: calc(0px - 1.5rem);
   }
 
   .coffeeType span {
@@ -25,12 +28,13 @@ export const CoffeeCardContainer = styled.div`
     font-weight: bold;
     background: ${({ theme }) => theme['yellow-light']};
     color: ${({ theme }) => theme['yellow-dark']};
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 30px;
+    margin-left: 0.25rem;
   }
 
   h4 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: ${({ theme }) => theme.subtitle};
     font-weight: 700;
   }
@@ -40,6 +44,10 @@ export const CoffeeCardContainer = styled.div`
     color: ${({ theme }) => theme.label};
     text-align: center;
     word-wrap: break-word;
+  }
+
+  @media (max-width: 720px) {
+    max-width: 100%;
   }
 `;
 

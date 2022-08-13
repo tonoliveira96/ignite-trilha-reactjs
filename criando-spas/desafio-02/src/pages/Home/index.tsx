@@ -4,8 +4,10 @@ import introImagePath from "../../assets/intro-image.png";
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 import { useTheme } from 'styled-components';
 
-import coffee1 from "../../assets/produts/expresso.png";
 import { CoffeeCard } from '../../components/CardCoffee';
+import { products } from '../../database';
+
+const imagePath = "./src/assets/produts/";
 
 export function Home() {
 
@@ -56,14 +58,18 @@ export function Home() {
       <CoffeeListContainer>
         <h2>Nossos cafés</h2>
         <CoffeeList>
-          <CoffeeCard
-            name='Tradicional'
-            description='O tradicional café feito com água quente e grãos moídos'
-            image={ coffee1 }
-            price={ 9.90 }
-            type={ ["tradicional"] }
+          { products.map(product => (
+            <CoffeeCard
+              key={ product.id }
+              name={ product.name }
+              description={ product.description }
+              image={ imagePath + product.image }
+              price={ product.price }
+              type={ product.type }
 
-          />
+            />
+          )) }
+
         </CoffeeList>
       </CoffeeListContainer>
     </>

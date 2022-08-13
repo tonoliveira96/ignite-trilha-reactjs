@@ -12,9 +12,11 @@ interface CardCoffeeProps {
 export function CoffeeCard({ name, description, price, image, type }: CardCoffeeProps) {
   return (
     <CoffeeCardContainer>
-      <img src={ image } alt="Expresso" />
+      <img src={ image } alt={image} />
       <div className='coffeeType'>
-        <span>{ type[0] }</span>
+        { type.map(item => (
+          <span>{ item }</span>
+        )) }
       </div>
       <h4>{ name }</h4>
       <p>{ description }</p>

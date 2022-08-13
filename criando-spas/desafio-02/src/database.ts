@@ -1,32 +1,42 @@
 export const products = [
   {
     id: 1,
-    name: "Expresso Tradicional",
-    description: "O tradicional café feito com água quente e grãos moídos",
-    price: 9.90,
-    image: "./src/assets/products/expresso.png",
-    type: [
-      "tradicional"
-    ]
+    name: 'Expresso Tradicional',
+    description: 'O tradicional café feito com água quente e grãos moídos',
+    price: 9.9,
+    image: 'expresso.png',
+    type: ['tradicional'],
   },
   {
     id: 2,
-    name: "Expresso Tradicional",
-    description: "O tradicional café feito com água quente e grãos moídos",
-    price: 9.90,
-    image: "./src/assets/products/expresso.png",
-    type: [
-      "tradicional"
-    ]
+    name: 'Expresso Americano',
+    description: 'Expresso diluído, menos intenso que o tradicional',
+    price: 9.9,
+    image: 'Americano.png',
+    type: ['tradicional'],
   },
   {
     id: 3,
-    name: "Expresso Tradicional",
-    description: "O tradicional café feito com água quente e grãos moídos",
-    price: 9.90,
-    image: "./src/assets/products/expresso.png",
-    type: [
-      "tradicional"
-    ]
+    name: 'Expresso Cremoso',
+    description: 'Café expresso tradicional com espuma cremosa',
+    price: 9.9,
+    image: 'Expresso Cremoso.png',
+    type: ['tradicional'],
   },
-]
+  {
+    id: 4,
+    name: 'Expresso Gelado',
+    description: 'Bebida preparada com café expresso e cubos de gelo',
+    price: 9.9,
+    image: 'Café Gelado.png',
+    type: ['tradicional', 'gelado'],
+  },
+  {
+    id: 5,
+    name: 'Café com Leite',
+    description: 'Meio a meio de expresso tradicional com leite vaporizado',
+    price: 9.9,
+    image: 'Café com Leite.png',
+    type: ['tradicional', 'com leite'],
+  },
+];
