@@ -1,10 +1,11 @@
-import { CoffeeCard, CoffeeList, CoffeeListContainer, IconContainer, IntroContainer, IntroContainerItems, IntroImage, IntroTitleContainer } from './styles';
+import { CoffeeList, CoffeeListContainer, IconContainer, IntroContainer, IntroContainerItems, IntroImage, IntroTitleContainer } from './styles';
 
 import introImagePath from "../../assets/intro-image.png";
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 import { useTheme } from 'styled-components';
 
-import coffee1 from "../../assets/produts/expresso.png"
+import coffee1 from "../../assets/produts/expresso.png";
+import { CoffeeCard } from '../../components/CardCoffee';
 
 export function Home() {
 
@@ -55,69 +56,14 @@ export function Home() {
       <CoffeeListContainer>
         <h2>Nossos cafés</h2>
         <CoffeeList>
-          <CoffeeCard>
-            <img src={coffee1} alt="Expresso" />
-            <div className='coffeeType'>
-              <span>Tradicional</span>
-            </div>
-            <h4>Café Expresso</h4>
-            <p>O tradicional café feito com água quente e grãos moídos</p>
-            <div className='cardFooter'>
-              <span>R$ 9,90</span>
-              
-              <button>
-                <ShoppingCart size={22} weight="fill" color='#FFFFFF' />
-              </button>
-            </div>
-          </CoffeeCard>
+          <CoffeeCard
+            name='Tradicional'
+            description='O tradicional café feito com água quente e grãos moídos'
+            image={ coffee1 }
+            price={ 9.90 }
+            type={ ["tradicional"] }
 
-          <CoffeeCard>
-            <img src={coffee1} alt="Expresso" />
-            <div className='coffeeType'>
-              <span>Tradicional</span>
-            </div>
-            <h4>Café Expresso</h4>
-            <p>O tradicional café feito com água quente e grãos moídos</p>
-            <div className='cardFooter'>
-              <span>R$ 9,90</span>
-              
-              <button>
-                <ShoppingCart size={22} weight="fill" color='#FFFFFF' />
-              </button>
-            </div>
-          </CoffeeCard>
-
-          <CoffeeCard>
-            <img src={coffee1} alt="Expresso" />
-            <div className='coffeeType'>
-              <span>Tradicional</span>
-            </div>
-            <h4>Café Expresso</h4>
-            <p>O tradicional café feito com água quente e grãos moídos</p>
-            <div className='cardFooter'>
-              <span>R$ 9,90</span>
-              
-              <button>
-                <ShoppingCart size={22} weight="fill" color='#FFFFFF' />
-              </button>
-            </div>
-          </CoffeeCard>
-
-          <CoffeeCard>
-            <img src={coffee1} alt="Expresso" />
-            <div className='coffeeType'>
-              <span>Tradicional</span>
-            </div>
-            <h4>Café Expresso</h4>
-            <p>O tradicional café feito com água quente e grãos moídos</p>
-            <div className='cardFooter'>
-              <span>R$ 9,90</span>
-              
-              <button>
-                <ShoppingCart size={22} weight="fill" color='#FFFFFF' />
-              </button>
-            </div>
-          </CoffeeCard>
+          />
         </CoffeeList>
       </CoffeeListContainer>
     </>
