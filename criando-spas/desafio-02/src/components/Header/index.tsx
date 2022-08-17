@@ -11,7 +11,7 @@ export function Header(){
     <HeaderContainer>
       <img src={Logo} />
       <nav>
-        <NavItem to="#" title='Localização' className='location'>
+        <NavItem to="/" title='Localização' className='location'>
           <MapPin size={24} color={theme['purple-dark']} weight="fill" />
           Manhuaçu, MG</NavItem>
         <NavItem to="/checkout" title='Carinho' className='cart'>

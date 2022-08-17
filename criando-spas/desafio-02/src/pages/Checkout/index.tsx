@@ -1,6 +1,7 @@
-import { CurrencyDollar, MapPinLine, Money } from 'phosphor-react';
+import { CreditCard, CurrencyDollar, MapPinLine, Money, Trash } from 'phosphor-react';
+import { AmountButtonsComponent } from '../../components/AmoutButtons';
 import { InputForm } from '../../components/Form/InputForm';
-import { ContainerCart, ContainerCheckout, ContainerForm, FormCardContent } from './styles';
+import { ButtonConfirm, ButtonPayMethod, CartItem, ContainerCart, ContainerCheckout, ContainerForm, ContentCart, FooterCard, FormCardContent } from './styles';
 
 export function Checkout() {
   return (
@@ -36,12 +37,60 @@ export function Checkout() {
               <span>Pagamento</span>
               <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
             </div>
+
+          </div>
+          <div className='payMethod'>
+            <ButtonPayMethod>
+              <CreditCard size={ 16 } color="#8047F8" />
+              Cartão de crédito
+            </ButtonPayMethod>
+            <ButtonPayMethod>
+              <CreditCard size={ 16 } color="#8047F8" />
+              Cartão de débito
+            </ButtonPayMethod>
+            <ButtonPayMethod>
+              <CreditCard size={ 16 } color="#8047F8" />
+              Dinheiro
+            </ButtonPayMethod>
           </div>
         </FormCardContent>
 
       </ContainerForm>
       <ContainerCart>
         <h3>Cafés selecionados</h3>
+        <ContentCart>
+          <CartItem>
+            <img src="./src/assets/produts/expresso.png" alt="" />
+            <div>
+              <p>Descrição</p>
+              <div className='buttonsActions'>
+                <AmountButtonsComponent />
+                <button className='removeItem'>
+                  <Trash size={ 16 } color="#8047F8" />
+                  REMOVER
+                </button>
+              </div>
+            </div>
+            <span>9,90</span>
+          </CartItem>
+          <FooterCard>
+            <div>
+              Total de itens
+              <span>R$ 29,70</span>
+            </div>
+            <div>
+              Entrega
+              <span>R$ 29,70</span>
+            </div>
+            <div className='total'>
+              Total
+              <span>R$ 29,70</span>
+            </div>
+          </FooterCard>
+          <ButtonConfirm>
+            CONFIRMAR
+          </ButtonConfirm>
+        </ContentCart>
       </ContainerCart>
     </ContainerCheckout>
   )

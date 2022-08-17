@@ -1,5 +1,6 @@
-import { Minus, Plus, ShoppingCart } from 'phosphor-react';
-import { CoffeeCardContainer, CoffeeCardFooter, ContainerAmountButtons } from './styles';
+import { ShoppingCart } from 'phosphor-react';
+import { AmountButtonsComponent } from '../AmoutButtons';
+import { CoffeeCardContainer, CoffeeCardFooter } from './styles';
 
 interface CardCoffeeProps {
   name: string;
@@ -22,15 +23,7 @@ export function CoffeeCard({ name, description, price, image, type }: CardCoffee
       <p>{ description }</p>
       <CoffeeCardFooter>
         <span> { price }</span>
-        <ContainerAmountButtons>
-          <button>
-            <Minus size={ 16 } weight="fill" />
-          </button>
-          <span>1</span>
-          <button>
-            <Plus size={ 16 } weight="fill" />
-          </button>
-        </ContainerAmountButtons>
+        <AmountButtonsComponent />
         <button>
           <ShoppingCart size={ 22 } weight="fill" color='#FFFFFF' />
         </button>
