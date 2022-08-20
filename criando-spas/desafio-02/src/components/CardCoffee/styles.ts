@@ -11,6 +11,7 @@ export const CoffeeCardContainer = styled.div`
   border-radius: 6px 36px;
   padding: 1.25rem;
   padding-top: 8rem;
+  margin-top: 1rem;
   gap: 1rem;
 
   img {
