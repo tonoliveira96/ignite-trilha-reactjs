@@ -7,7 +7,7 @@ export function AmountButtonsComponent() {
       <button>
         <Minus size={ 16 } weight="fill" />
       </button>
-      <span>1</span>
+      <span className='amount'>1</span>
       <button>
         <Plus size={ 16 } weight="fill" />
       </button>

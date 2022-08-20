@@ -13,6 +13,7 @@ export const AmountButtons = styled.div`
     background: transparent;
     border: 0;
     margin: 0;
+    background: ${({ theme }) => theme.button};
     color: ${({ theme }) => theme.purple};
     font-size: 2rem;
   }
@@ -21,7 +22,7 @@ export const AmountButtons = styled.div`
     background: ${({ theme }) => theme.hover};
   }
 
-  span {
+  .amount {
     color: ${({ theme }) => theme.title};
     font-size: 1rem;
   }

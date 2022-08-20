@@ -20,19 +20,6 @@ export const CoffeeCardContainer = styled.div`
     top: calc(0px - 1.5rem);
   }
 
-  .coffeeType span {
-    margin: 1rem 0;
-    font-size: 0.875rem;
-    line-height: 1.3%;
-    text-transform: uppercase;
-    font-weight: bold;
-    background: ${({ theme }) => theme['yellow-light']};
-    color: ${({ theme }) => theme['yellow-dark']};
-    padding: 0.25rem 0.5rem;
-    border-radius: 30px;
-    margin-left: 0.25rem;
-  }
-
   h4 {
     font-size: 1.25rem;
     color: ${({ theme }) => theme.subtitle};
@@ -56,7 +43,7 @@ export const CoffeeCardFooter = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  span {
+  .price {
     font-size: 1.5rem;
     color: ${({ theme }) => theme.text};
     line-height: 1.3;
@@ -64,11 +51,30 @@ export const CoffeeCardFooter = styled.div`
     font-family: 'Baloo 2';
   }
 
-  button {
+  span.price::before{
+    content: 'R$ ';
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  .addToCart {
     width: 38px;
     height: 38px;
     border: 0;
     border-radius: 6px;
     background: ${({ theme }) => theme['purple-dark']};
   }
+`;
+
+export const CoffeeType = styled.span`
+    margin: 1rem 0;
+    font-size: 0.875rem;
+    line-height: 1.3%;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: ${({ theme }) => theme['yellow-light']};
+    color: ${({ theme }) => theme['yellow-dark']};
+    padding: 0.25rem 0.5rem;
+    border-radius: 30px;
+    margin-left: 0.25rem;
 `;

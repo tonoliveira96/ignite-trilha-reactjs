@@ -1,11 +1,11 @@
 import { ShoppingCart } from 'phosphor-react';
 import { AmountButtonsComponent } from '../AmoutButtons';
-import { CoffeeCardContainer, CoffeeCardFooter } from './styles';
+import { CoffeeCardContainer, CoffeeCardFooter, CoffeeType } from './styles';
 
 interface CardCoffeeProps {
   name: string;
   description: string;
-  price: number;
+  price: string;
   type: String[];
   image: string;
 }
@@ -13,18 +13,18 @@ interface CardCoffeeProps {
 export function CoffeeCard({ name, description, price, image, type }: CardCoffeeProps) {
   return (
     <CoffeeCardContainer>
-      <img src={ image } alt={image} />
+      <img src={ image } alt={ image } />
       <div className='coffeeType'>
         { type.map(item => (
-          <span>{ item }</span>
+          <CoffeeType key={ item }>{ item }</CoffeeType>
         )) }
       </div>
       <h4>{ name }</h4>
       <p>{ description }</p>
       <CoffeeCardFooter>
-        <span> { price }</span>
+        <span className='price'>{ price }</span>
         <AmountButtonsComponent />
-        <button>
+        <button className='addToCart'>
           <ShoppingCart size={ 22 } weight="fill" color='#FFFFFF' />
         </button>
       </CoffeeCardFooter>

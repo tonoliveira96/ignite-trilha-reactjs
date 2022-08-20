@@ -6,6 +6,7 @@ import { useTheme } from 'styled-components';
 
 import { CoffeeCard } from '../../components/CardCoffee';
 import { products } from '../../database';
+import { formatCurrencyValue } from '../../utils/utilsFormat';
 
 const imagePath = "./src/assets/produts/";
 
@@ -60,13 +61,12 @@ export function Home() {
         <CoffeeList>
           { products.map(product => (
             <CoffeeCard
-              key={ product.id }
+              key={ product.id.toString() }
               name={ product.name }
               description={ product.description }
               image={ imagePath + product.image }
-              price={ product.price }
+              price={ formatCurrencyValue(product.price) }
               type={ product.type }
-
             />
           )) }
 
