@@ -12,10 +12,17 @@
   font-size: 0.875rem;
 
   transition: background-color 0.3s;
+  opacity: 1;
 }
 
 .addBtn:hover {
   background: var(--blue);
+}
+
+.addBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+  border: 0;
 }
 
 .addBtn svg {

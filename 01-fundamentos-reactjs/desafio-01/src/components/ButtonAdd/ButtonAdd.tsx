@@ -2,7 +2,7 @@ import { PlusCircle } from 'phosphor-react';
 import { ButtonHTMLAttributes } from 'react';
 import style from './ButtonAdd.module.css';
 
-interface ButtonsAddProps {
+interface ButtonsAddProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick: () => void;
 }
 

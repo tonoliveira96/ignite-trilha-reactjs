@@ -30,6 +30,7 @@ function App() {
     };
     setTasksList([...tasksList, newTask]);
     localStorage.setItem("@viteTodoList", JSON.stringify([...tasksList, task]));
+    setTask('');
   }
 
   function deleteTask(id: string) {
@@ -72,15 +73,15 @@ function App() {
       deleteTask={ deleteTask }
       completeTask={ completeTask }
     />
-  )) : (<NoTaskComponent/>)
+  )) : (<NoTaskComponent />);
 
   return (
     <>
       <Header />
       <div className={ style.app }>
         <div className={ style.containerInput }>
-          <InputTodo setTask={ setTask } />
-          <ButtonAdd onClick={ handleCreate } />
+          <InputTodo setTask={ setTask } value={ task } />
+          <ButtonAdd onClick={ handleCreate } disabled={ task.length < 3 } />
         </div>
 
         <div className={ style.tasks }>
