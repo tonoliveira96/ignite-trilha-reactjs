@@ -1,13 +1,15 @@
 import { Header } from '../../components/Header';
-import { Container } from './styles';
+import { Profile } from '../../components/Profile';
+import { ContainerHome } from './styles';
 
 export function Home() {
   return (
     <>
       <Header />
-      <Container>
+      <Profile />
+      <ContainerHome>
         <h1>Home</h1>
-      </Container>
+      </ContainerHome>
     </>
 
   );

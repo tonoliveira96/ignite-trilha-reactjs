@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 296px;
 
-  background: ${({ theme }) => theme.profile};
+  background: linear-gradient(180deg,${({theme})=>theme.profile} ,${({theme})=>theme.blue}) ;
 
   img.logo {
     width: 148px;
