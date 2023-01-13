@@ -2,10 +2,22 @@
 import { ContainerInfoProfile, ContainerProfile, FooterContainerProfile, HeaderContainerProfile } from './styles';
 import { } from "phosphor-react";
 
-export function Profile() {
+export interface ProfileProps {
+  avatr_url: string;
+  name: string;
+  bio: string;
+  login: string;
+  followers: string;
+}
+
+interface ProfileComponentProps {
+  data: ProfileProps;
+}
+
+export function Profile({ data }: ProfileComponentProps) {
   return (
     <ContainerProfile>
-      <img src="https://github.com/tonoliveira96.png" alt="Foto de perfil" />
+      <img src={data.avatr_url} alt="Foto de perfil" />
 
       <ContainerInfoProfile>
         <HeaderContainerProfile>
@@ -17,16 +29,17 @@ export function Profile() {
         </HeaderContainerProfile>
 
         <div className='content'>
-          <p>Assim mesmo, a contínua expansão de nossa atividade apresenta tendências no sentido de aprovar a manutenção da gestão inovadora da qual fazemos parte.</p>
+          <p>{data.bio}</p>
 
           <FooterContainerProfile>
             <span>
-
-              Github
+              {data.login}
             </span>
             <span>Site</span>
             <span>
-              Seguidores</span>
+            {data.followers}
+              Seguidores
+              </span>
           </FooterContainerProfile>
         </div>
       </ContainerInfoProfile>

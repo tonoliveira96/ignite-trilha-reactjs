@@ -55,6 +55,9 @@ export const FooterContainerProfile = styled.div`
   display: flex;
   gap: 2rem;
   margin-bottom: 0;
-
   margin-top: 0.5rem;
+
+  span{
+  gap: 1rem;
+  }
 `;
