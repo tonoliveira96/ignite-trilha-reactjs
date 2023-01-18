@@ -1,6 +1,5 @@
 
 import { ContainerInfoProfile, ContainerProfile, FooterContainerProfile, HeaderContainerProfile } from './styles';
-import { } from "phosphor-react";
 
 export interface ProfileProps {
   avatr_url: string;
