@@ -43,6 +43,9 @@ export const HeaderContainerPostCard = styled.div`
   justify-content: space-between;
 
   a {
+    display: flex;
+    align-items:center;
+    gap: 0.5rem;
     text-decoration: none;
     color: ${({ theme }) => theme.blue};
   }
@@ -55,6 +58,9 @@ export const FooterContainerPostCard = styled.div`
   margin-top: 0.5rem;
 
   span {
-    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 `;

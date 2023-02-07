@@ -9,11 +9,13 @@ export const ContainerCardPost = styled.a`
 
   div {
     padding: 1rem 0;
+    height: 64px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 
     h2 {
+      max-width: 80%;
       font-size: 1.25rem;
       color: ${({ theme }) => theme.title};
     }
@@ -25,6 +27,7 @@ export const ContainerCardPost = styled.a`
   }
 
   p {
+    padding-top: 1rem;
     font-size: 1rem;
     color: ${({ theme }) => theme.text};
     overflow: hidden;

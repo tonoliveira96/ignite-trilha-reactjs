@@ -1,6 +1,6 @@
 
+import { FaBuilding, FaGithub, FaUserFriends } from "react-icons/fa";
 import { ContainerInfoProfile, ContainerProfile, FooterContainerProfile, HeaderContainerProfile } from './styles';
-
 export interface ProfileProps {
   avatr_url: string;
   name: string;
@@ -29,16 +29,19 @@ export function Profile({ data }: ProfileComponentProps) {
 
         <div className='content'>
           <p>{data.bio}</p>
-
           <FooterContainerProfile>
             <span>
+              <FaGithub size={18} />
               {data.login}
             </span>
-            <span>Site</span>
             <span>
-            {data.followers}
-              Seguidores
-              </span>
+              <FaBuilding size={18} />
+              <span>Site</span>
+            </span>
+            <span>
+              <FaUserFriends size={18} />
+              {data.followers} Seguidores
+            </span>
           </FooterContainerProfile>
         </div>
       </ContainerInfoProfile>

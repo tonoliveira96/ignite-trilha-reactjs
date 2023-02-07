@@ -1,3 +1,5 @@
+import { formatDistance } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import { useEffect, useState } from 'react';
 import api from '../../api/services';
 import { CardPost, CardPostProps } from '../../components/CardPost';
@@ -16,20 +18,21 @@ export function Home() {
       name: data.name,
       bio: data.bio,
       followers: data.followers,
-      login: data.login
+      login: data.login,
     });
   };
 
   const getPostsData = async () => {
-    const { data } = await api.get('/repos/tonoliveira96/ignite-trilha-reactjs-2022/issues');
+    const { data } = await api.get(
+      '/repos/tonoliveira96/ignite-trilha-reactjs-2022/issues'
+    );
 
     const mappedPosts = data.map((post: any) => ({
       id: post.number,
       title: post.title,
-      created_at: post.created_at,
-      body: post.body
+      created_at: formatDistance(new Date(post.created_at), new Date(), { locale: ptBR }),
+      body: post.body,
     }));
-    console.log(mappedPosts);
     setCardPosts(mappedPosts);
   };
 
@@ -45,16 +48,17 @@ export function Home() {
       <ContainerHome>
         <h1>Home</h1>
         <ContainerPosts>
-          {cardPosts.map(cards => (
+          {cardPosts.map((cards) => (
             <CardPost
+              key={cards.id}
               id={cards.id}
               body={cards.body}
               created_at={cards.created_at}
-              title={cards.title} />
+              title={cards.title}
+            />
           ))}
         </ContainerPosts>
       </ContainerHome>
     </>
-
   );
 }
