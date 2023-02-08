@@ -5,6 +5,7 @@ import api from '../../api/services';
 import { CardPost, CardPostProps } from '../../components/CardPost';
 import { Header } from '../../components/Header';
 import { Profile, ProfileProps } from '../../components/Profile';
+import { SearchContainer } from '../../components/SearchContainer';
 import { ContainerHome, ContainerPosts } from './styles';
 
 export function Home() {
@@ -46,7 +47,7 @@ export function Home() {
       <Header />
       <Profile data={profile} />
       <ContainerHome>
-        <h1>Home</h1>
+        <SearchContainer post_amount={cardPosts.length}/>
         <ContainerPosts>
           {cardPosts.map((cards) => (
             <CardPost
