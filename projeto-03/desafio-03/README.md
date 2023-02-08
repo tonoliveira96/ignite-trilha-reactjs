@@ -20,3 +20,4 @@ Nesse desafio, você vai desenvolver uma aplicação que utilizará da API do Gi
 5. Acessar no navegador `http://localhost:5173/`.
 
 ## Tela
+![](./assets/rjs-2022-desafio-03.gif)
