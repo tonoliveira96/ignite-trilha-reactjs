@@ -6,10 +6,9 @@ export const HomeContainer = styled('main', {
   maxWidth: 'calc(100vw - ((100vw - 1180px) /2))',
   marginLeft: 'auto',
   minHeight: 656,
+});
 
-})
-
-export const Products = styled('a', {
+export const Products = styled('div', {
   background: 'linear-gradient(188deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
   cursor: 'pointer',
@@ -19,7 +18,6 @@ export const Products = styled('a', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-
 
   img: {
     objectFit: 'cover',
@@ -58,11 +56,10 @@ export const Products = styled('a', {
 
   },
 
-  '&:hover':{
+  '&:hover': {
     footer: {
       transform: 'translateY(0%)',
       opacity: 1,
     }
   }
-
-})
+});

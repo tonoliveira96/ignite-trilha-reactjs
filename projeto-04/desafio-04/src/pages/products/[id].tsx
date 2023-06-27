@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import Stripe from "stripe";
@@ -19,41 +20,40 @@ interface ProductProps {
 export default function Products({ product }: ProductProps) {
   const [isLaoding, setIsLoading] = useState(false);
   async function handleByProduct() {
-    try {
-      setIsLoading(true);
-      const response = await fetch(`http://localhost:3000/api/checkout`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId: product.defaultPriceId }),
-      });
-      response.json().then(data => {
-        window.location.href = data.checkoutUrl;
-      });
+    setIsLoading(true);
+    const response = await fetch(`http://localhost:3000/api/checkout`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ priceId: product.defaultPriceId }),
+    });
 
-    } catch (error) {
-
-    } finally {
+    response.json().then(data => {
+      window.location.href = data.checkoutUrl;
+    }).finally(() => {
       setIsLoading(false);
-    }
-
-
-
+    });
   }
 
   return (
-    <ProductContainer>
-      <ImageContainer>
-        <Image src={product.imageUrl} width={520} height={480} alt='' />
-      </ImageContainer>
-      <ProductDetails>
-        <h1>{product.name}</h1>
-        <span>{product.price}</span>
-        <p>{product.description}</p>
-        <button disabled={isLaoding} onClick={handleByProduct}>
-          Comprar agora
-        </button>
-      </ProductDetails>
-    </ProductContainer>);
+    <>
+      <Head>
+        <title>{product.name}</title>
+      </Head>
+      <ProductContainer>
+        <ImageContainer>
+          <Image src={product.imageUrl} width={520} height={480} alt='' />
+        </ImageContainer>
+        <ProductDetails>
+          <h1>{product.name}</h1>
+          <span>{product.price}</span>
+          <p>{product.description}</p>
+          <button disabled={isLaoding} onClick={handleByProduct}>
+            Comprar agora
+          </button>
+        </ProductDetails>
+      </ProductContainer>
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

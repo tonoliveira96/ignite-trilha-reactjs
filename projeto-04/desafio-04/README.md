@@ -15,6 +15,6 @@ Nesse desafio, você vai aproveitar a aplicação que já desenvolvemos na trilh
 2. Acessar a pasta `projeto-04/desafio-04`
 2. Rodar no terminal `npm i` para instalar as depedência.
 4. Rodar no terminal `npm run dev` para rodar o projeto.
-5. Acessar no navegador `http://localhost:5173/`.
+5. Acessar no navegador `http://localhost:3000/`.
 
 ## Tela
