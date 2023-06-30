@@ -7,18 +7,28 @@ import { HomeContainer, Products } from '../../styles/pages/home';
 import "keen-slider/keen-slider.min.css";
 import Head from 'next/head';
 import Link from 'next/link';
-import { stripe } from '../lib/stripe';
 
+import { ButtonCart } from '../../styles/components/cart';
+import { useCartContext } from '../context/useCartContext';
+import { useCart } from '../hooks/useCart';
+import BagIcon from '../icons/BagIcon';
+import { stripe } from '../lib/stripe';
+import formatValue from '../utils/formatValue';
+
+export interface ProductProps {
+  id: string,
+  name: string,
+  imageUrl: string,
+  price: string,
+}
 interface HomeProps {
-  products: {
-    id: string,
-    name: string,
-    imageUrl: string,
-    price: string,
-  }[];
+  products: ProductProps[];
 }
 
 export default function Home({ products }: HomeProps) {
+
+  const { addToCart } = useCart();
+  const { cart, openCart } = useCartContext();
   const [sliderRef] = useKeenSlider({
     slides: {
       perView: 3,
@@ -37,8 +47,13 @@ export default function Home({ products }: HomeProps) {
             <Products className="keen-slider__slide">
               <Image src={product.imageUrl} width={520} height={480} alt="" />
               <footer>
-                <strong>{product.name}</strong>
-                <span>{product.price}</span>
+                <div>
+                  <strong>{product.name}</strong>
+                  <span>{product.price}</span>
+                </div>
+                <ButtonCart color='green' onClick={() => addToCart(product)}>
+                  <BagIcon />
+                </ButtonCart>
               </footer>
             </Products>
           </Link>
@@ -60,10 +75,7 @@ export const getStaticProps: GetStaticProps = async () => {
       id: product.id,
       name: product.name,
       imageUrl: product.images[0],
-      price: new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
-      }).format(Number(price.unit_amount) / 100)
+      price: formatValue(Number(price.unit_amount) / 100)
     };
   });
 
