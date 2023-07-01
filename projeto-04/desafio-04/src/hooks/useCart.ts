@@ -1,5 +1,7 @@
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useCartContext } from '../context/useCartContext';
+
+const cartStorageKey = '@igniteshop:products';
 
 export const useCart = () => {
   const { cart, setCart } = useCartContext();
@@ -7,12 +9,12 @@ export const useCart = () => {
   useEffect(() => {
     function loadProducts() {
       const storageProducts = localStorage.getItem(
-        '@igniteshop:products',
+        cartStorageKey,
       );
 
       if (storageProducts) {
         setCart([...JSON.parse(storageProducts)]);
-      } 
+      }
     }
 
     loadProducts();
@@ -20,43 +22,47 @@ export const useCart = () => {
 
   function addToCart(product: any) {
     const productsExists = cart.find(p => p.id === product.id);
-    console.log("entrei");
 
     if (productsExists) {
       const updateCart = cart.map(p =>
         p.id === product.id ? { ...product, quantity: p.quantity + 1 } : p,
       );
       localStorage.setItem(
-        '@igniteshop:products',
+        cartStorageKey,
         JSON.stringify(updateCart),
       );
-      setCart(updateCart)
+      setCart(updateCart);
     } else {
       localStorage.setItem(
-        '@igniteshop:products',
+        cartStorageKey,
         JSON.stringify([...cart, { ...product, quantity: 1 }]),
       );
       setCart([...cart, { ...product, quantity: 1 }]);
     }
   }
 
-  const increment = useCallback(
-    id => {
-      // TODO INCREMENTS A PRODUCT QUANTITY IN THE CART
-      const newProducts = cart.map(product =>
-        product.id === id
-          ? { ...product, quantity: product.quantity + 1 }
-          : product,
-      );
-      setCart(newProducts);
+  function removeFromCart(id: string) {
+    const updateCart = cart.filter(item => item.id !== id);
+    setCart(updateCart);
+    localStorage.setItem(
+      cartStorageKey,
+      JSON.stringify(updateCart),
+    );
+  }
 
-      localStorage.setItem(
-        '@igniteshop:products',
-        JSON.stringify(newProducts),
-      );
-    },
-    [cart, setCart],
-  );
+  function increment(id: string) {
+    const newProducts = cart.map(product =>
+      product.id === id
+        ? { ...product, quantity: product.quantity + 1 }
+        : product,
+    );
+    setCart(newProducts);
+
+    localStorage.setItem(
+      cartStorageKey,
+      JSON.stringify(newProducts),
+    );
+  }
 
   function decrement(id: string) {
     const newProducts = cart.map(product =>
@@ -64,17 +70,22 @@ export const useCart = () => {
         ? { ...product, quantity: product.quantity - 1 }
         : product,
     );
-    console.log(newProducts);
     setCart(newProducts);
     localStorage.setItem(
-      '@igniteshop:products',
+      cartStorageKey,
       JSON.stringify(newProducts),
     );
+  }
+
+  function clearCart() {
+    localStorage.removeItem(cartStorageKey);
   }
 
   return {
     addToCart,
     increment,
-    decrement
+    decrement,
+    clearCart,
+    removeFromCart,
   };
 };

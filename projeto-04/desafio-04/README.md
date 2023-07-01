@@ -8,7 +8,9 @@ Nesse desafio, você vai aproveitar a aplicação que já desenvolvemos na trilh
 - Enviar o carrinho que você armazenou na aplicação para a rota de checkout, onde irá gerar a sessão de checkout com os ``line_items`` necessários.
 
 ## Ferramentas e conceitos
-
+- NextJS (SSG e SSR).
+- Stripe (Meios de pagamentos externos).
+- Api Routes.
 
 ## Instruções
 1. Baixar o projeto usando `https://github.com/tonoliveira96/ignite-trilha-reactjs.git`
@@ -18,3 +20,4 @@ Nesse desafio, você vai aproveitar a aplicação que já desenvolvemos na trilh
 5. Acessar no navegador `http://localhost:3000/`.
 
 ## Tela
+![](./assets/desafio-04.gif)

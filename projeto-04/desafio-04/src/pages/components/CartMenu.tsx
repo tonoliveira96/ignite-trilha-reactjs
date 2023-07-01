@@ -13,7 +13,7 @@ interface CartMenuProps {
 
 export default function CartMenu({ isOpen }: CartMenuProps) {
   const { setOpenCart, cart } = useCartContext();
-  const { decrement } = useCart();
+  const { decrement,removeFromCart } = useCart();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -77,7 +77,7 @@ export default function CartMenu({ isOpen }: CartMenuProps) {
               <span>{item.name}</span>
               <strong>{formatValue(item.price)}</strong>
               <p>{`Unid: ${item.quantity}`}</p>
-              <button onClick={() => decrement(item.id)}>Remover</button>
+              <button onClick={() => removeFromCart(item.id)}>Remover</button>
             </CartContainerInfo>
           </CartItem>
         ))}

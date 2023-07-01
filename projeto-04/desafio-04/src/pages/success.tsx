@@ -2,8 +2,10 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import Stripe from "stripe";
 import { ImageContainer, SuccessContainer } from '../../styles/pages/success';
+import { useCart } from '../hooks/useCart';
 import { stripe } from '../lib/stripe';
 
 interface SuccessProps {
@@ -15,6 +17,10 @@ interface SuccessProps {
 }
 
 export default function SucCess({ customerName, product }: SuccessProps) {
+  const { clearCart } = useCart();
+
+  useEffect(() => { clearCart(), []; });
+  
   return (
     <>
       <Head>
@@ -37,14 +43,14 @@ export default function SucCess({ customerName, product }: SuccessProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  if (query.session_id) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false
-      }
-    };
-  }
+  // if (query.session_id) {
+  //   return {
+  //     redirect: {
+  //       destination: '/',
+  //       permanent: false
+  //     }
+  //   };
+  // }
 
   const sessionId = String(query.session_id);
 
