@@ -20,4 +20,4 @@ Nesse desafio, você vai aproveitar a aplicação que já desenvolvemos na trilh
 5. Acessar no navegador `http://localhost:3000/`.
 
 ## Tela
-![](./assets/desafio-04.gif)
+![](./assets/projeto-04.gif)
