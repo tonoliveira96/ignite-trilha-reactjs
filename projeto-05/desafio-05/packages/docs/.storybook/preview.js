@@ -1,3 +1,5 @@
+import { themes } from "@storybook/theming";
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
@@ -8,7 +10,11 @@ const preview = {
         date: /Date$/,
       },
     },
+    docs: {
+      theme: themes.dark,
+    }
   },
+
 };
 
 export default preview;
