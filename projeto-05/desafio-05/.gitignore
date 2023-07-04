@@ -1,2 +1,7 @@
+# node_modules
 /node_modules
 /packages/docs/node_modules
+
+/packages/docs/storybook-static
+dist
+.turbo
