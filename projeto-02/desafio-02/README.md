@@ -20,7 +20,7 @@ Nesse desafio, você vai desenvolver uma aplicação para gerenciar um carrinho 
 - Componentização
 
 ## Instruções
-1. Baixar o projeto usando `https://github.com/tonoliveira96/ignite-trilha-reactjs.git`
+1. Baixar o projeto usando `https://github.com/tonoliveira96/ignite-trilha-reactjs-2022.git`
 2. Acessar a pasta `projeto-02/desafio-02`
 2. Rodar no terminal `npm i` para instalar as depedência.
 4. Rodar no terminal `npm run dev` para rodar o projeto.

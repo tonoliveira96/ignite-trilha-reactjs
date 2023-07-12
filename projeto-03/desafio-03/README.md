@@ -13,7 +13,7 @@ Nesse desafio, você vai desenvolver uma aplicação que utilizará da API do Gi
 - Formulários
 
 ## Instruções
-1. Baixar o projeto usando `https://github.com/tonoliveira96/ignite-trilha-reactjs.git`
+1. Baixar o projeto usando `https://github.com/tonoliveira96/ignite-trilha-reactjs-2022.git`
 2. Acessar a pasta `projeto-03/desafio-03`
 2. Rodar no terminal `npm i` para instalar as depedência.
 4. Rodar no terminal `npm run dev` para rodar o projeto.
