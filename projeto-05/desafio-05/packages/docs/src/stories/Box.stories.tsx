@@ -10,6 +10,13 @@ export default {
         <Text>Eu sou um box</Text>
       </>
     ),
+    argTypes: {
+      children: {
+        control: {
+          type: null,
+        },
+      },
+    },
   },
 } as Meta<BoxProps>
 

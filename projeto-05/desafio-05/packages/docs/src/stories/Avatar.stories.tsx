@@ -8,6 +8,13 @@ export default {
     src: 'https://github.com/tonoliveira96.png',
     alt: 'Everton Oliveira',
   },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
