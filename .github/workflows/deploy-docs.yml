@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          
+      - run: cd projeto-05/desafio-05
 
       - run: npm ci
 
