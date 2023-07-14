@@ -16,7 +16,7 @@ const config = {
   },
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
-      config.base = '/projeto-05/'
+      config.base = '/ignite-trilha-reactjs-2022/'
     }
 
     return config
