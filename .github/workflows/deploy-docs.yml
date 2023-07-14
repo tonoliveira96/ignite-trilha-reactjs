@@ -17,9 +17,9 @@ jobs:
         with:
           node-version: 16
 
-      - run: cd projeto-05/desafio-05 npm ci
+      - run: cd projeto-05/desafio-05 && npm ci
 
-      - run: cd projeto-05/desafio-05 npm run build
+      - run: npm run build
 
       - name: Deploy storybook
         working-directory: ./packages/docs
