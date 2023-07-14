@@ -19,5 +19,7 @@ Nesse desafio, você vai aproveitar o design system que já desenvolvemos na tri
 4. Rodar no terminal `npm run dev` para rodar o projeto.
 5. Acessar no navegador `http://localhost:3000/`.
 
+## Demonstração
+Você pode acessar o Storybook desse projeto clicando em: [https://tonoliveira96.github.io/ignite-trilha-reactjs-2022](https://tonoliveira96.github.io/ignite-trilha-reactjs-2022/)
 ## Tela
 ![](./assets/)
