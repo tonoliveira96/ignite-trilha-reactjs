@@ -1,5 +1,4 @@
-
-import { globalStyles } from "../styles/global";
+import { globalStyles } from '../styles/global'
 
 globalStyles()
 
